@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         future: ApiController().getFollowersPosts(1), 
         builder: (context, AsyncSnapshot<List<PostModel>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Scaffold(
+            return const Scaffold(
               body: Center(child: CircularProgressIndicator()), 
             );
           } else if (snapshot.hasError) {

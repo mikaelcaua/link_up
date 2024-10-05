@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:link_up/domains/models/post_model.dart';
 import 'package:link_up/provider/post_provider.dart';
-import 'package:link_up/screens/components/post_component.dart';
+import 'package:link_up/screens/components/post/list_post_component.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,12 +14,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Consumer(
         builder: (context, Posts posts, Widget? widget) {
-          return ListView.builder(
-            itemCount: posts.list.length,
-            itemBuilder: (context, index) {
-              return PostComponent(description: posts.list[index].description, img: posts.list[index].description);
-            },
-          );
+          return ListPostComponent(posts: posts.list);
         },
       ),
     );
