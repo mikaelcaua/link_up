@@ -14,7 +14,7 @@ class ApiDao {
         return UserModel.fromMap(user);
       }
     }
-    return UserModel(id: 0, name: "Error", surname: "Error", followers: []);
+    throw Exception('User not Found');
   }
 
   Future<List<PostModel>> getUserPostsData(int userId) async {

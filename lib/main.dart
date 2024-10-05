@@ -1,25 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:link_up/controllers/api_controller.dart';
+import 'package:link_up/domains/models/post_model.dart';
+import 'package:link_up/screens/home_screen.dart';
+import 'package:provider/provider.dart';
 
-void main() async{
-  runApp(const MyApp());
-  print(await ApiController().getFollowersPosts(1));
+import 'provider/post_provider.dart';
+
+void main() {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      home: FutureBuilder(
+        future: ApiController().getFollowersPosts(1), 
+        builder: (context, AsyncSnapshot<List<PostModel>> snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Scaffold(
+              body: Center(child: CircularProgressIndicator()), 
+            );
+          } else if (snapshot.hasError) {
+            return Scaffold(
+              body: Center(child: Text('Erro ao carregar dados: ${snapshot.error}')),
+            );
+          } else {
+            return MultiProvider(
+              providers: [
+                ChangeNotifierProvider(
+                  create: (context) => Posts(list: snapshot.data!), 
+                ),
+              ],
+              child: HomeScreen(),  // Seu widget principal
+            );
+          }
+        },
       ),
-      home: Container(),
     );
   }
 }
-
