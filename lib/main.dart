@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:link_up/controllers/api_controller.dart';
 import 'package:link_up/domains/models/post_model.dart';
-import 'package:link_up/screens/home_screen.dart';
+import 'package:link_up/presentation/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'provider/post_provider.dart';

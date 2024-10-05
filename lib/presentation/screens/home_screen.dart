@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:link_up/provider/post_provider.dart';
-import 'package:link_up/screens/components/post/list_post_component.dart';
+import 'package:link_up/presentation/components/post/list_post_component.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
