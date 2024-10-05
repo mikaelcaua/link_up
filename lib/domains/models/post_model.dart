@@ -25,7 +25,7 @@ class PostModel {
 
   factory PostModel.fromMap(Map<String, dynamic> map) {
     return PostModel(
-      id: map['id'] as int,
+      id: map['id'],
       description: map['description'] as String,
       userId: map['userId'] as int,
       imgPost: map['imgPost'] as String,
@@ -35,4 +35,9 @@ class PostModel {
   String toJson() => json.encode(toMap());
 
   factory PostModel.fromJson(String source) => PostModel.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() {
+    return 'PostModel(id: $id, description: $description, userId: $userId, imgPost: $imgPost)';
+  }
 }

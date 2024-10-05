@@ -3,7 +3,14 @@
         {
             "id": 1,
             "description": "Meu primeiro Post",
-            "userId": 1
+            "userId": 1,
+            "imgPost":"url"
+        },
+        {
+            "id": 2,
+            "description": "Meu segundo Post",
+            "userId": 1,
+            "imgPost":"url"
         }
     ]
     ,
@@ -11,7 +18,8 @@
         {
             "id":1,
             "name": "Mikael",
-            "surname":"mik4elll"
+            "surname":"mik4elll",
+            "followers":[2,3,4,5,6]
         }
     ]
 }

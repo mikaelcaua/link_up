@@ -5,11 +5,13 @@ class UserModel {
   int id;
   String name;
   String surname;
-  
+  List<int> followers;
+
   UserModel({
     required this.id,
     required this.name,
     required this.surname,
+    required this.followers,
   });
 
   Map<String, dynamic> toMap() {
@@ -17,6 +19,7 @@ class UserModel {
       'id': id,
       'name': name,
       'surname': surname,
+      'followers': followers,
     };
   }
 
@@ -25,10 +28,19 @@ class UserModel {
       id: map['id'] as int,
       name: map['name'] as String,
       surname: map['surname'] as String,
+      followers: List<int>.from(
+        (map['followers'] as List<int>),
+      ),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory UserModel.fromJson(String source) => UserModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory UserModel.fromJson(String source) =>
+      UserModel.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() {
+    return 'UserModel(id: $id, name: $name, surname: $surname, followers: $followers)';
+  }
 }

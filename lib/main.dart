@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:link_up/controllers/api_controller.dart';
 
-void main() {
+void main() async{
   runApp(const MyApp());
+  print(await ApiController().getUserPosts(1));
 }
 
 class MyApp extends StatelessWidget {
