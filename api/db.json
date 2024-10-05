@@ -17,6 +17,18 @@
             "description": "Usuário 2 - Primeiro Post",
             "userId": 2,
             "imgPost":"url"
+        },
+        {
+            "id": 3,
+            "description": "Usuário 2 - Segundo Post",
+            "userId": 2,
+            "imgPost":"url"
+        },
+        {
+            "id": 3,
+            "description": "Usuário 2 - Terceiro Post",
+            "userId": 2,
+            "imgPost":"url"
         }
     ]
     ,

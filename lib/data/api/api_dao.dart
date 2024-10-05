@@ -7,7 +7,7 @@ class ApiDao {
   final Dio apiDaoDio = Dio();
   
   Future<UserModel> getUserData(int userId) async{
-    Response response = await apiDaoDio.get("$usersUrl");
+    Response response = await apiDaoDio.get(usersUrl);
     List<dynamic> users = response.data;
     for(dynamic user in users){
       if(user['id'] == userId){
