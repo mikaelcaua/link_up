@@ -11,6 +11,12 @@
             "description": "Meu segundo Post",
             "userId": 1,
             "imgPost":"url"
+        },
+        {
+            "id": 3,
+            "description": "Usuário 2 - Primeiro Post",
+            "userId": 2,
+            "imgPost":"url"
         }
     ]
     ,
@@ -19,6 +25,12 @@
             "id":1,
             "name": "Mikael",
             "surname":"mik4elll",
+            "followers":[2,3,4,5,6]
+        },
+        {
+            "id":2,
+            "name": "Alysson",
+            "surname":"alyssonpereira",
             "followers":[2,3,4,5,6]
         }
     ]

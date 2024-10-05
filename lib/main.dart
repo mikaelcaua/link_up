@@ -3,7 +3,7 @@ import 'package:link_up/controllers/api_controller.dart';
 
 void main() async{
   runApp(const MyApp());
-  print(await ApiController().getUserPosts(1));
+  print(await ApiController().getFollowersPosts(1));
 }
 
 class MyApp extends StatelessWidget {

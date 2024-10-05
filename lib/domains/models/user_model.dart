@@ -28,9 +28,7 @@ class UserModel {
       id: map['id'] as int,
       name: map['name'] as String,
       surname: map['surname'] as String,
-      followers: List<int>.from(
-        (map['followers'] as List<int>),
-      ),
+      followers: ((map['followers'] as List<dynamic>).map((e) => e as int)).toList(),
     );
   }
 

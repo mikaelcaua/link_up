@@ -16,4 +16,9 @@ class ApiController implements ApiWorkflow{
     return await _apiDao.getUserData(userId);
   }
   
+  @override
+  Future<List<PostModel>> getFollowersPosts(int userId) async{
+    return await _apiDao.getFollowersPostsData(userId);
+  }
+  
 }
