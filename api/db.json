@@ -1,0 +1,17 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "description": "Meu primeiro Post",
+            "userId": 1
+        }
+    ]
+    ,
+    "users": [
+        {
+            "id":1,
+            "name": "Mikael",
+            "surname":"mik4elll"
+        }
+    ]
+}
