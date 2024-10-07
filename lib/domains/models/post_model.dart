@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 class PostModel {
   int id;
   String description;
@@ -25,7 +24,7 @@ class PostModel {
 
   factory PostModel.fromMap(Map<String, dynamic> map) {
     return PostModel(
-      id: map['id'],
+      id: map['id'] as int,
       description: map['description'] as String,
       userId: map['userId'] as int,
       imgPost: map['imgPost'] as String,

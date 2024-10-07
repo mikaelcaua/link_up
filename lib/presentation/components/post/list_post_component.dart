@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:link_up/domains/models/post_model.dart';
-import 'package:link_up/screens/components/post_component.dart';
+import 'package:link_up/presentation/components/post/post_component.dart';
 
 class ListPostComponent extends StatefulWidget {
   ListPostComponent({super.key, required this.posts});
@@ -18,6 +18,6 @@ class _ListPostComponentState extends State<ListPostComponent> {
             itemBuilder: (context, index) {
               return PostComponent(description: widget.posts[index].description, img: widget.posts[index].description);
             },
-          );;
+          );
   }
 }

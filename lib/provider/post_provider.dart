@@ -8,5 +8,9 @@ List<PostModel> list;
   Posts({
     required this.list,
   });
+  
+  void setPosts(List<PostModel> newPosts){
+    list = newPosts;
+  }
     
 }
