@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => Posts(list: [])),
       ],
       child: MaterialApp(
+        theme: ThemeData.dark(),
         home: HomeScreen(),
       ),
     );

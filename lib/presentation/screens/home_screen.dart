@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:link_up/presentation/components/post/list_post_component.dart';
+import 'package:link_up/utils/theme/link_up_colors.dart';
 import 'package:provider/provider.dart';
 import 'package:link_up/controllers/api_controller.dart';
 import 'package:link_up/domains/models/post_model.dart';
@@ -11,9 +12,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('LinkUp'),
+        backgroundColor: LinkUpColors().AppBarBackGround,
       ),
       body: FutureBuilder(
-        future: ApiController().getFollowersPosts(2),
+        future: ApiController().getFollowersPosts(1),
         builder: (context, AsyncSnapshot<List<PostModel>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: Text('Carregado...'));
