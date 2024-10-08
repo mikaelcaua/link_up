@@ -12,16 +12,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Future<List<PostModel>>posts = ApiController().getFollowersPosts('mik4elll');
+
   Future<void> refresh() {
     setState(() {
       posts = ApiController().getFollowersPosts('mik4elll');
     });
     return Future.delayed(
-      Duration(seconds: 1),
+      const Duration(seconds: 1),
     );
   }
-
-  Future<List<PostModel>>posts = ApiController().getFollowersPosts('mik4elll');
 
   @override
   Widget build(BuildContext context) {

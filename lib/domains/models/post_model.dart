@@ -23,6 +23,7 @@ class PostModel {
   }
 
   factory PostModel.fromMap(Map<String, dynamic> map) {
+    print('chegou postmodelmap');
     return PostModel(
       id: int.parse(map['id']),
       description: map['description'],

@@ -22,11 +22,11 @@ class PostComponent extends StatelessWidget {
           builder: (context, snapshot) {
             switch (snapshot.connectionState) {
               case ConnectionState.none:
-                return Text('nada');
+                return Center(child: Text('Carregado...'),);
               case ConnectionState.waiting:
-                return Text('nada');
+                return Center(child: Text('Carregado...'),);
               case ConnectionState.active:
-                return Text('nada');
+                return Center(child: Text('Erro ao carregar os dados'),);
               case ConnectionState.done:
                 return Container(
                   decoration: BoxDecoration(
