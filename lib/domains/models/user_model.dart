@@ -24,10 +24,10 @@ class UserModel {
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
-      id: map['id'] as int,
-      name: map['name'] as String,
-      surname: map['surname'] as String,
-      followers: ((map['followers'] as List<dynamic>).map((e) => e as int)).toList(),
+      id: int.parse(map["id"]),
+      name: map["name"],
+      surname: map["surname"],
+      followers: List<int>.from(map["followers"]),
     );
   }
 
