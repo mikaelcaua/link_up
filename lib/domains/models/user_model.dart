@@ -4,11 +4,13 @@ class UserModel {
   String name;
   String surname;
   List<String> followers;
+  String userImg;
 
   UserModel({
     required this.name,
     required this.surname,
     required this.followers,
+    required this.userImg
   });
 
   Map<String, dynamic> toMap() {
@@ -16,15 +18,16 @@ class UserModel {
       'name': name,
       'surname': surname,
       'followers': followers,
+      'userImg':userImg
     };
   }
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
-    print('chegou em from map');
     return UserModel(
       name: map["name"],
       surname: map["surname"],
       followers: List<String>.from(map["followers"]),
+      userImg:map["userImg"] 
     );
   }
 
@@ -35,6 +38,6 @@ class UserModel {
 
   @override
   String toString() {
-    return 'UserModel( name: $name, surname: $surname, followers: $followers)';
+    return 'UserModel( name: $name, surname: $surname, followers: $followers, img:$userImg)';
   }
 }

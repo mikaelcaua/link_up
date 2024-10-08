@@ -32,7 +32,7 @@
         },
         {
             "id": "6",
-            "description": "Usuário 2 - Quarto Post",
+            "description": "Usuário 2 - Quarto Postttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
             "userSurname": "alyssonpereira",
             "imgPost":"https://images.pexels.com/photos/3866555/pexels-photo-3866555.png?auto=compress&cs=tinysrgb&w=600"
         }
@@ -42,12 +42,14 @@
         {
             "name": "Mikael",
             "surname":"mik4elll",
-            "followers":["alyssonpereira"]
+            "followers":["alyssonpereira"],
+            "userImg":"https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600"
         },
         {
             "name": "Alysson",
             "surname":"alyssonpereira",
-            "followers":[]
+            "followers":[],
+            "userImg":"https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600"
         }
     ]
 }
