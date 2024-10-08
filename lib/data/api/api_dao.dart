@@ -3,6 +3,7 @@ import 'package:link_up/domains/models/post_model.dart';
 import 'package:link_up/domains/models/user_model.dart';
 import 'package:link_up/utils/api/api_utils.dart';
 
+//fazer tratamento adequado de exceções
 class ApiDao {
   final Dio apiDaoDio = Dio();
 
@@ -24,6 +25,8 @@ class ApiDao {
 
     List<dynamic> data = response.data;
 
+
+    //melhorar essas funções de filtro
     List<PostModel> posts = data
         .map((e) => PostModel.fromMap(e))
         .where((post) => post.userSurname == userSurname)

@@ -16,7 +16,7 @@ class _ListPostComponentState extends State<ListPostComponent> {
     return ListView.builder(
             itemCount: widget.posts.length,
             itemBuilder: (context, index) {
-              return PostComponent(description: widget.posts[index].description, img: widget.posts[index].description);
+              return PostComponent(description: widget.posts[index].description, img: widget.posts[index].imgPost,userSurname: widget.posts[index].userSurname,);
             },
           );
   }
