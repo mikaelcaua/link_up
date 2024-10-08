@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:link_up/presentation/components/post/list_post_component.dart';
+import 'package:link_up/presentation/components/post/modal_post_component.dart';
 import 'package:link_up/utils/theme/link_up_colors.dart';
 import 'package:provider/provider.dart';
 import 'package:link_up/controllers/api_controller.dart';
@@ -52,6 +53,11 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        showDialog(context: context, builder: (context) {
+          return ModalPostComponent();
+        },);
+      }),
     );
   }
 }
