@@ -6,7 +6,23 @@ import 'package:link_up/controllers/api_controller.dart';
 import 'package:link_up/domains/models/post_model.dart';
 import 'package:link_up/provider/post_provider.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  Future<void> refresh() {
+    setState(() {
+      posts = ApiController().getFollowersPosts('mik4elll');
+    });
+    return Future.delayed(
+      Duration(seconds: 1),
+    );
+  }
+
+  Future<List<PostModel>>posts = ApiController().getFollowersPosts('mik4elll');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,22 +30,27 @@ class HomeScreen extends StatelessWidget {
         title: const Text('LinkUp'),
         backgroundColor: LinkUpColors().AppBarBackGround,
       ),
-      body: FutureBuilder(
-        future: ApiController().getFollowersPosts('mik4elll'),
-        builder: (context, AsyncSnapshot<List<PostModel>> snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: Text('Carregado...'));
-          } else if (snapshot.hasError) {
-            return Center(child: Text('Erro ao carregar dados: ${snapshot.error}'));
-          } else {
-            Provider.of<Posts>(context, listen: false).setPosts(snapshot.data!);
-            return Consumer<Posts>(
-              builder: (context, postsProvider, child) {
-                return ListPostComponent(posts: postsProvider.list);
-              },
-            );
-          }
-        },
+      body: RefreshIndicator(
+        onRefresh: refresh,
+        child: FutureBuilder(
+          future: posts,
+          builder: (context, AsyncSnapshot<List<PostModel>> snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: Text('Carregado...'));
+            } else if (snapshot.hasError) {
+              return Center(
+                  child: Text('Erro ao carregar dados: ${snapshot.error}'));
+            } else {
+              Provider.of<Posts>(context, listen: false)
+                  .setPosts(snapshot.data!);
+              return Consumer<Posts>(
+                builder: (context, postsProvider, child) {
+                  return ListPostComponent(posts: postsProvider.list);
+                },
+              );
+            }
+          },
+        ),
       ),
     );
   }

@@ -4,6 +4,7 @@ import 'package:link_up/domains/models/user_model.dart';
 import 'package:link_up/utils/api/api_utils.dart';
 
 //fazer tratamento adequado de exceções
+//muitas coisas podem ser melhoradas, não está nada eficiente
 class ApiDao {
   final Dio apiDaoDio = Dio();
 
@@ -25,7 +26,6 @@ class ApiDao {
 
     List<dynamic> data = response.data;
 
-
     //melhorar essas funções de filtro
     List<PostModel> posts = data
         .map((e) => PostModel.fromMap(e))
@@ -41,6 +41,8 @@ class ApiDao {
     print('chegou em fpllwoers');
     Response response = await apiDaoDio.get(postsUrl);
     List<dynamic> data = response.data;
+    print(data);
+    //melhorar essa função de filtro
     List<PostModel> posts = data
         .map((e) => PostModel.fromMap(e))
         .where((post) => followers.contains(post.userSurname))

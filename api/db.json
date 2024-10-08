@@ -1,32 +1,38 @@
 {
     "posts": [
         {
-            "id": 1,
+            "id": "1",
             "description": "Meu primeiro Post",
             "userSurname": "mik4elll",
             "imgPost":"https://images.pexels.com/photos/3866555/pexels-photo-3866555.png?auto=compress&cs=tinysrgb&w=600"
         },
         {
-            "id": 2,
+            "id": "2",
             "description": "Meu segundo Post",
             "userSurname": "mik4elll",
             "imgPost":"https://images.pexels.com/photos/3866555/pexels-photo-3866555.png?auto=compress&cs=tinysrgb&w=600"
         },
         {
-            "id": 3,
+            "id": "3",
             "description": "Usuário 2 - Primeiro Post",
             "userSurname": "alyssonpereira",
             "imgPost":"https://images.pexels.com/photos/3866555/pexels-photo-3866555.png?auto=compress&cs=tinysrgb&w=600"
         },
         {
-            "id": 3,
+            "id": "4",
             "description": "Usuário 2 - Segundo Post",
             "userSurname": "alyssonpereira",
             "imgPost":"https://images.pexels.com/photos/3866555/pexels-photo-3866555.png?auto=compress&cs=tinysrgb&w=600"
         },
         {
-            "id": 3,
+            "id": "5",
             "description": "Usuário 2 - Terceiro Post",
+            "userSurname": "alyssonpereira",
+            "imgPost":"https://images.pexels.com/photos/3866555/pexels-photo-3866555.png?auto=compress&cs=tinysrgb&w=600"
+        },
+        {
+            "id": "6",
+            "description": "Usuário 2 - Quarto Post",
             "userSurname": "alyssonpereira",
             "imgPost":"https://images.pexels.com/photos/3866555/pexels-photo-3866555.png?auto=compress&cs=tinysrgb&w=600"
         }
