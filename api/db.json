@@ -3,44 +3,42 @@
         {
             "id": 1,
             "description": "Meu primeiro Post",
-            "userId": 1,
-            "imgPost":"url"
+            "userSurname": "mik4elll",
+            "imgPost":"https://images.pexels.com/photos/3866555/pexels-photo-3866555.png?auto=compress&cs=tinysrgb&w=600"
         },
         {
             "id": 2,
             "description": "Meu segundo Post",
-            "userId": 1,
-            "imgPost":"url"
+            "userSurname": "mik4elll",
+            "imgPost":"https://images.pexels.com/photos/3866555/pexels-photo-3866555.png?auto=compress&cs=tinysrgb&w=600"
         },
         {
             "id": 3,
             "description": "Usuário 2 - Primeiro Post",
-            "userId": 2,
-            "imgPost":"url"
+            "userSurname": "alyssonpereira",
+            "imgPost":"https://images.pexels.com/photos/3866555/pexels-photo-3866555.png?auto=compress&cs=tinysrgb&w=600"
         },
         {
             "id": 3,
             "description": "Usuário 2 - Segundo Post",
-            "userId": 2,
-            "imgPost":"url"
+            "userSurname": "alyssonpereira",
+            "imgPost":"https://images.pexels.com/photos/3866555/pexels-photo-3866555.png?auto=compress&cs=tinysrgb&w=600"
         },
         {
             "id": 3,
             "description": "Usuário 2 - Terceiro Post",
-            "userId": 2,
-            "imgPost":"url"
+            "userSurname": "alyssonpereira",
+            "imgPost":"https://images.pexels.com/photos/3866555/pexels-photo-3866555.png?auto=compress&cs=tinysrgb&w=600"
         }
     ]
     ,
     "users": [
         {
-            "id":1,
             "name": "Mikael",
             "surname":"mik4elll",
-            "followers":[2,3,4,5,6]
+            "followers":["alyssonpereira"]
         },
         {
-            "id":2,
             "name": "Alysson",
             "surname":"alyssonpereira",
             "followers":[]

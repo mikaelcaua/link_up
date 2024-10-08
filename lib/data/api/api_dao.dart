@@ -6,39 +6,41 @@ import 'package:link_up/utils/api/api_utils.dart';
 class ApiDao {
   final Dio apiDaoDio = Dio();
 
-  Future<UserModel> getUserData(int userId) async {
+  Future<UserModel> getUserData(String userSurname) async {
     Response response = await apiDaoDio.get(usersUrl);
     List<dynamic> users = response.data;
 
     for (dynamic user in users) {
-      if (user['id'] == "$userId") {
+      if (user['surname'] == userSurname) {
+        print(user);
         return UserModel.fromMap(user);
       }
     }
     throw Exception('User not Found');
   }
 
-  Future<List<PostModel>> getUserPostsData(int userId) async {
+  Future<List<PostModel>> getUserPostsData(String userSurname) async {
     Response response = await apiDaoDio.get(postsUrl);
 
     List<dynamic> data = response.data;
 
     List<PostModel> posts = data
         .map((e) => PostModel.fromMap(e))
-        .where((post) => post.userId == userId)
+        .where((post) => post.userSurname == userSurname)
         .toList();
 
     return posts;
   }
 
-  Future<List<PostModel>> getFollowersPostsData(int userId) async {
-    UserModel userData = await getUserData(userId);
-    List<int> followers = userData.followers;
+  Future<List<PostModel>> getFollowersPostsData(String userSurname) async {
+    UserModel userData = await getUserData(userSurname);
+    List<String> followers = userData.followers;
+    print('chegou em fpllwoers');
     Response response = await apiDaoDio.get(postsUrl);
     List<dynamic> data = response.data;
     List<PostModel> posts = data
         .map((e) => PostModel.fromMap(e))
-        .where((post) => followers.contains(post.userId))
+        .where((post) => followers.contains(post.userSurname))
         .toList();
 
     return posts;

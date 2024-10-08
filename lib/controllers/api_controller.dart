@@ -7,18 +7,18 @@ class ApiController implements ApiWorkflow{
   final _apiDao = ApiDao();
 
   @override
-  Future<List<PostModel>> getUserPosts(int userId) async{
-    return await _apiDao.getUserPostsData(userId);
+  Future<List<PostModel>> getUserPosts(String userSurname) async{
+    return await _apiDao.getUserPostsData(userSurname);
   }
 
   @override
-  Future<UserModel> getUser(int userId) async{
-    return await _apiDao.getUserData(userId);
+  Future<UserModel> getUser(String userSurname) async{
+    return await _apiDao.getUserData(userSurname);
   }
   
   @override
-  Future<List<PostModel>> getFollowersPosts(int userId) async{
-    return await _apiDao.getFollowersPostsData(userId);
+  Future<List<PostModel>> getFollowersPosts(String userSurname) async{
+    return await _apiDao.getFollowersPostsData(userSurname);
   }
   
 }

@@ -3,13 +3,13 @@ import 'dart:convert';
 class PostModel {
   int id;
   String description;
-  int userId;
+  String userSurname;
   String imgPost;
 
   PostModel({
     required this.id,
     required this.description,
-    required this.userId,
+    required this.userSurname,
     required this.imgPost,
   });
 
@@ -17,7 +17,7 @@ class PostModel {
     return <String, dynamic>{
       'id': id,
       'description': description,
-      'userId': userId,
+      'userSurname': userSurname,
       'imgPost': imgPost,
     };
   }
@@ -26,7 +26,7 @@ class PostModel {
     return PostModel(
       id: int.parse(map['id']),
       description: map['description'],
-      userId: map['userId'],
+      userSurname: map['userSurname'],
       imgPost: map['imgPost'],
     );
   }
@@ -42,6 +42,6 @@ class PostModel {
 
   @override
   String toString() {
-    return 'PostModel(id: $id, description: $description, userId: $userId, imgPost: $imgPost)';
+    return 'PostModel(id: $id, description: $description, userId: $userSurname, imgPost: $imgPost)';
   }
 }

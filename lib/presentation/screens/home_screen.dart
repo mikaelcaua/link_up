@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: LinkUpColors().AppBarBackGround,
       ),
       body: FutureBuilder(
-        future: ApiController().getFollowersPosts(1),
+        future: ApiController().getFollowersPosts('mik4elll'),
         builder: (context, AsyncSnapshot<List<PostModel>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: Text('Carregado...'));

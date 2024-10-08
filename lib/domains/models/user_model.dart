@@ -1,13 +1,11 @@
 import 'dart:convert';
 
 class UserModel {
-  int id;
   String name;
   String surname;
-  List<int> followers;
+  List<String> followers;
 
   UserModel({
-    required this.id,
     required this.name,
     required this.surname,
     required this.followers,
@@ -15,7 +13,6 @@ class UserModel {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'id': id,
       'name': name,
       'surname': surname,
       'followers': followers,
@@ -23,11 +20,11 @@ class UserModel {
   }
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
+    print('chegou em from map');
     return UserModel(
-      id: int.parse(map["id"]),
       name: map["name"],
       surname: map["surname"],
-      followers: List<int>.from(map["followers"]),
+      followers: List<String>.from(map["followers"]),
     );
   }
 
@@ -38,6 +35,6 @@ class UserModel {
 
   @override
   String toString() {
-    return 'UserModel(id: $id, name: $name, surname: $surname, followers: $followers)';
+    return 'UserModel( name: $name, surname: $surname, followers: $followers)';
   }
 }
